@@ -5,7 +5,13 @@ rock = 'Rock'
 paper = 'Paper'
 scissor = 'Scissor'
 
+#colors
+def prRed(skk): print('\033[91m {}\033[00m' .format(skk))
+def prGreen(skk): print('\033[92m {}\033[00m' .format(skk))
+def prYellow(skk): print("\033[93m {}\033[00m" .format(skk))
+
 #logic
+
 player_move = input('Choose [r]ock, [p]aper, [s]cissor: ')
 
 if player_move == 'r':
@@ -37,10 +43,10 @@ print(f'The computer chose {computer_move}')
 
 if (computer_move == rock and player_move == paper) or (computer_move == paper and player_move == scissor) or \
         (computer_move == scissor and player_move == rock):
-    print('Congratulations! You win!')
+    prGreen('Congratulations! You win!')
 
 elif computer_move == player_move:
-    print('It\'s a draw. Try again!')
+    prYellow('It\'s a draw. Try again!')
 
 else:
-    print('You lost! Try again.')
+    prRed('You lost! Try again.')
